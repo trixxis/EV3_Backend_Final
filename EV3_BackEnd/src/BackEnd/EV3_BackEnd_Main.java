@@ -224,17 +224,17 @@ public class EV3_BackEnd_Main extends Thread
 				try 
 				{
 					byte[] DataTab;
-					DataTab = new byte[8]; 					//Tableau qui sera envoyé vers l'android
+					DataTab = new byte[8]; 									//Tableau qui sera envoyé vers l'android
 					DataTab[0] = 99;		
-					DataTab[1] = (byte) VC.GetGyro();		//Contient la valeur de l'angle
-					DataTab[2] = (byte) (VC.GetSpeed()/10);	//Contient la valeur de la vitesse diviser par 10
-					DataTab[3] = (byte) VC.Getlux();		//Contient la valeur de la luminausité
-					DataTab[4] = (byte) VC.GetCon();		//Contient la valeur de contact
-					DataTab[5] = (byte) VC.GetBat();		//Contient la valeur de la batterie
-					DataTab[6] = (byte) (VC.GetUL()/125);	//Permet de determiner si la distance est supérieur a 125 
-					DataTab[7] = (byte) (VC.GetUL()-(VC.GetUL()/125)*125);//envoie le reste de la division de la vitesse par 125
-					VBT.WriteBT(DataTab);					//Envoie du tableau vers android
-			    }
+					DataTab[1] = (byte) VC.GetGyro();						//Contient la valeur de l'angle
+					DataTab[2] = (byte) (VC.GetSpeed()/10);					//Contient la valeur de la vitesse diviser par 10
+					DataTab[3] = (byte) VC.Getlux();						//Contient la valeur de la luminausité
+					DataTab[4] = (byte) VC.GetCon();						//Contient la valeur de contact
+					DataTab[5] = (byte) VC.GetBat();						//Contient la valeur de la batterie
+					DataTab[6] = (byte) (VC.GetUL()/125);					//Permet de determiner si la distance est supérieur a 125 
+					DataTab[7] = (byte) (VC.GetUL()-(VC.GetUL()/125)*125);	//envoie le reste de la division de la vitesse par 125
+					VBT.WriteBT(DataTab);									//Envoie du tableau vers android
+			    }	
 				catch (IOException ioe) 
 				{
 			        ioe.printStackTrace();
